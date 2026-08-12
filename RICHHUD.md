@@ -11,8 +11,9 @@ Embedded Client source alone does nothing without Master.
 
 ## Client module (compile-time)
 
-1. Download the **Full** Client from [Releases](https://zachhembree.github.io/RichHudFramework.Client/Releases.html) or [GitHub](https://github.com/ZachHembree/RichHudFramework.Client).
-2. Copy `Shared` and `Client` into `Data/Scripts/ModTemplate/RichHudFramework/`.
+**Full** Client **1.3.0.0** is in `Data/Scripts/ModTemplate/RichHudFramework/` (`Shared/` + `Client/`).
+
+To refresh: download from [Releases](https://zachhembree.github.io/RichHudFramework.Client/Releases.html) or [GitHub](https://github.com/ZachHembree/RichHudFramework.Client) and replace those two folders.
 
 Initialize from **one** session component only (`RichHudClient.Init` in `ModSession`).
 
