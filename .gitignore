@@ -1,0 +1,14 @@
+# OS / IDE
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vs/
+.idea/
+*.user
+*.suo
+*.swp
+*~
+
+# Build artifacts (if an IDE project is added later)
+bin/
+obj/

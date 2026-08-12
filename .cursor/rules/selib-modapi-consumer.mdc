@@ -1,0 +1,41 @@
+---
+description: Route Space Engineers mod work to the SELib documentation library
+alwaysApply: true
+---
+
+# SELib consumer rule
+
+This project writes Space Engineers **mods**. API truth lives in the SELib library repo - not guesses, not Keen docs alone.
+
+## SELib location
+
+Set this to your local SELib clone (adjust if needed):
+
+`T:/Cursor Projects/SELib`
+## Quick start (open these first)
+
+1. **Docs router (preferred):** `T:/Cursor Projects/SELib/docs/AGENT.md` - task map + context limits.
+2. **Browsable site:** `T:/Cursor Projects/SELib/site/_site/index.html` - Articles + API (rebuild with `T:/Cursor Projects/SELib/scripts/refresh.cmd` if missing).
+3. **Site mirror of router:** `T:/Cursor Projects/SELib/site/articles/agent.md`.
+4. Mod-root pointer file: `SELIB.md` (same links; installed with this rule).
+
+## Agent workflow
+
+1. Open the Docs router and follow the task row (cheat sheet -> recipe -> at most two type pages).
+2. Prefer SELib cheat sheets under `T:/Cursor Projects/SELib/docs/cheatsheets/`.
+3. Check type status via:
+   - `T:/Cursor Projects/SELib/data/type-labels.json`, or
+   - From the SELib repo: `dotnet selib check <TypeOrMember>` (after `T:/Cursor Projects/SELib/scripts/install-selib-tool.cmd`), or
+   - `dotnet run --project "T:/Cursor Projects/SELib/tools/SeLib.Cli" -- check <TypeOrMember>`
+4. Escalate members: `T:/Cursor Projects/SELib/site/api/<FullName>.md` (or HTML site API pages).
+5. Use at most a few SELib markdown pages per task. Never dump `modapi-catalog.json`.
+6. Label **Whitelisted internal** types explicitly when used.
+7. Never mix `*.Ingame` usings with ModAPI namespaces.
+
+## SELib health
+
+From the SELib repo: `dotnet selib doctor` - verifies Bin64 path, extract freshness, tool version, and drift.
+
+## After SE updates
+
+Refresh SELib first: `T:/Cursor Projects/SELib/scripts/refresh.cmd`, then re-check `T:/Cursor Projects/SELib/data/catalog-diff.json` and `dotnet selib doctor`.
