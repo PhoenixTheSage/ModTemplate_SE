@@ -11,7 +11,7 @@ Embedded Client source alone does nothing without Master.
 
 ## Client module (compile-time)
 
-**Full** Client **1.3.0.0** is in `Data/Scripts/ModTemplate/RichHudFramework/` (`Shared/` + `Client/`).
+**Full** Client **1.3.0.0** is in `Data/Scripts/Lobbies/RichHudFramework/` (`Shared/` + `Client/`).
 
 To refresh: download from [Releases](https://zachhembree.github.io/RichHudFramework.Client/Releases.html) or [GitHub](https://github.com/ZachHembree/RichHudFramework.Client) and replace those two folders.
 

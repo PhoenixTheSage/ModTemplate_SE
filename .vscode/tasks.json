@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/ModTemplate_SE.csproj",
+                "${workspaceFolder}/Lobbies.csproj",
                 "-c",
                 "Debug",
                 "/p:RunAnalyzersDuringBuild=true",
