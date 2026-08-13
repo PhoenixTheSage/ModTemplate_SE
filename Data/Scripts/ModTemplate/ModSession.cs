@@ -8,55 +8,60 @@ using RichHudFramework.UI.Client;
 using VRage.Game.Components; // Whitelisted internal: MySessionComponentBase
 using VRage.Game;
 
-[MySessionComponentDescriptor(MyUpdateOrder.NoUpdate)]
-public sealed class ModSession : MySessionComponentBase
+namespace ModTemplate_SE.Data.Scripts.ModTemplate
 {
-    public override void Init(MyObjectBuilder_SessionComponent sessionComponent)
+    // Game constructs this via MySessionComponentDescriptor (reflection).
+    // ReSharper disable once UnusedType.Global
+    [MySessionComponentDescriptor(MyUpdateOrder.NoUpdate)]
+    public sealed class ModSession : MySessionComponentBase
     {
-        RichHudClient.Init("Template", HudInit, ClientReset);
-    }
-
-    public override void BeforeStart()
-    {
-        var utilities = MyAPIGateway.Utilities;
-        if (utilities == null)
-            return;
-
-        utilities.ShowMessage("ModTemplate", "Session loaded. Waiting for Rich Hud…");
-    }
-
-    private void HudInit()
-    {
-        RichHudTerminal.Root.Enabled = true;
-        RichHudTerminal.Root.Add(new TextPage
+        public override void Init(MyObjectBuilder_SessionComponent sessionComponent)
         {
-            Name = "Hello World",
-            HeaderText = "Hello World",
-            Text = "Hello World",
-            Enabled = true,
-        });
+            RichHudClient.Init("Template", HudInit, ClientReset);
+        }
 
-        var binds = BindManager.GetOrCreateGroup("main");
-        binds.RegisterBinds(new BindGroupInitializer
+        public override void BeforeStart()
         {
-            { "Template" },
-        });
+            var utilities = MyAPIGateway.Utilities;
+            if (utilities == null)
+                return;
 
-        RichHudTerminal.Root.Add(new RebindPage
+            utilities.ShowMessage("ModTemplate", "Session loaded. Waiting for Rich Hud…");
+        }
+
+        private void HudInit()
         {
-            Name = "Binds",
-            Enabled = true,
-            GroupContainer =
+            RichHudTerminal.Root.Enabled = true;
+            RichHudTerminal.Root.Add(new TextPage
             {
-                { binds, true },
-            },
-        });
+                Name = "Hello World",
+                HeaderText = "Hello World",
+                Text = "Hello World",
+                Enabled = true,
+            });
 
-        var utilities = MyAPIGateway.Utilities;
-        utilities?.ShowMessage("ModTemplate", "Rich Hud registered. Open the Terminal and select Template.");
-    }
+            var binds = BindManager.GetOrCreateGroup("main");
+            binds.RegisterBinds(new BindGroupInitializer
+            {
+                { "Template" },
+            });
 
-    private void ClientReset()
-    {
+            RichHudTerminal.Root.Add(new RebindPage
+            {
+                Name = "Binds",
+                Enabled = true,
+                GroupContainer =
+                {
+                    { binds, true },
+                },
+            });
+
+            var utilities = MyAPIGateway.Utilities;
+            utilities?.ShowMessage("ModTemplate", "Rich Hud registered. Open the Terminal and select Template.");
+        }
+
+        private void ClientReset()
+        {
+        }
     }
 }

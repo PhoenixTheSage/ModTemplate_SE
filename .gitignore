@@ -12,3 +12,7 @@ Desktop.ini
 # Build artifacts (if an IDE project is added later)
 bin/
 obj/
+
+# MDK2 local machine paths
+mdk.local.ini
+*.user

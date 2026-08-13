@@ -29,8 +29,17 @@ Set this to your local SELib clone (adjust if needed):
    - `dotnet run --project "T:/Cursor Projects/SELib/tools/SeLib.Cli" -- check <TypeOrMember>`
 4. Escalate members: `T:/Cursor Projects/SELib/site/api/<FullName>.md` (or HTML site API pages).
 5. Use at most a few SELib markdown pages per task. Never dump `modapi-catalog.json`.
-6. Label **Whitelisted internal** types explicitly when used.
-7. Never mix `*.Ingame` usings with ModAPI namespaces.
+6. Label **Whitelisted internal** and **Member-only** types explicitly when used.
+7. Always `dotnet selib check Type.Member` before using a concrete `My*` member. `member-only-gap` / `unknown` means prohibited. See `T:/Cursor Projects/SELib/docs/whitelist/blacklist.md`.
+8. Never mix `*.Ingame` usings with ModAPI namespaces.
+
+## Secondary docs (annotation only)
+
+Local SELib extract and `dotnet selib check` win. These are name/signature indexes, not the whitelist.
+
+- Malforge ModAPI: https://malforge.github.io/spaceengineers/modapi/
+- Keen ModAPI: https://keensoftwarehouse.github.io/SpaceEngineersModAPI/
+- Full list: `T:/Cursor Projects/SELib/docs/sources.md`
 
 ## SELib health
 

@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build + MDK analyze",
+            "type": "node-terminal",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "command": "Write-Host 'Build and MDK analysis finished. Check the Problems panel for errors.'",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
